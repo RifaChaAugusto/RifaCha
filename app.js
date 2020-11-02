@@ -16,12 +16,12 @@ $(document).ready(function(){
 	document.getElementById("idMini").style.visibility="Hidden";
     //$.getJSON( "http://rarolabs.com.br:88/alunos.json", function() {	
     //$.getJSON( "params.json", function() {
-    $.getJSON( "http://github.com/RifaChaAugusto/RifaCha/blob/main/params.json", function() {
+    $.getJSON( "https://api.covid19api.com/stats", function() {
     }).done(function(data) { 
         var content = '<option>Pesquisar Currículo de</option>'; 
         for(var i=0; i <data.length; i++){
-		     var vrid = data[i]['nome'];			 
-			 content += '<option value='+vrid+' id='+data[i]['id']+'>'+data[i]['nome']+'</option>';
+		     var vrid = data[i]['Total'];			 
+			 content += '<option value='+vrid+' id='+data[i]['All']+'>'+data[i]['Total']+'</option>';
         }
         $('#alunos').html(content);
     });
@@ -32,15 +32,15 @@ $(document).ready(function(){
             str = $( this ).text();		
 	    	//$.getJSON( "http://rarolabs.com.br:88/alunos.json", function() {
 		//$.getJSON( "params.json", function() {
-		$.getJSON( "http://github.com/RifaChaAugusto/RifaCha/blob/main/params.json", function() { 
+		$.getJSON( "https://api.covid19api.com/stats", function() { 
         	}).done(function(data) {
         	    for(var i=0; i <data.length; i++){
-                     var nomeAluno = data[i]['nome'] 					 
+                     var nomeAluno = data[i]['Total'] 					 
 				     if (str == nomeAluno){
-					     var content = '<p id="idLink"><a id="Valida" href="'+ data[i]['link_html']+'"> Detalhes</a></p>';
-					     $('#idMini').html(data[i]['mini_curriculo']);
+					     var content = '<p id="idLink"><a id="Valida" href="'+ data[i]['CountriesUpdated']+'"> Detalhes</a></p>';
+					     $('#idMini').html(data[i]['PremiumSummaryCountryUpdated']);
 						 $('#idDVLink').html(content);
-                         if (data[i]['link_html'] == ''){ 
+                         if (data[i]['CountriesUpdated'] == ''){ 
 						    alert('Link Detalhes indisponível no momento.');
 						 }						 
 					 }
