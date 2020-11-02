@@ -12,8 +12,8 @@ function Apagafoto(){
 	 }
 }
 $(document).ready(function(){
-	//document.getElementById("idImg").style.visibility="Hidden";
-	//document.getElementById("idMini").style.visibility="Hidden";
+	document.getElementById("idImg").style.visibility="Hidden";
+	document.getElementById("idMini").style.visibility="Hidden";
     //$.getJSON( "http://rarolabs.com.br:88/alunos.json", function() {	
     //$.getJSON( "params.json", function() {
     //$.getJSON( "https://api.covid19api.com/stats", function() {
