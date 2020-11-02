@@ -14,7 +14,9 @@ function Apagafoto(){
 $(document).ready(function(){
 	document.getElementById("idImg").style.visibility="Hidden";
 	document.getElementById("idMini").style.visibility="Hidden";
-    $.getJSON( "http://rarolabs.com.br:88/alunos.json", function() {
+    //$.getJSON( "http://rarolabs.com.br:88/alunos.json", function() {	
+    $.getJSON( "params.json", function() {
+    //$.getJSON( "http://github.com/RifaChaAugusto/RifaCha/blob/main/params.json", function() {
     }).done(function(data) { 
         var content = '<option>Pesquisar Currículo de</option>'; 
         for(var i=0; i <data.length; i++){
@@ -28,7 +30,9 @@ $(document).ready(function(){
          $( "select option:selected" ).each(function() {
 			document.getElementById("idMini").style.visibility="Visible";
             str = $( this ).text();		
-	    	$.getJSON( "http://rarolabs.com.br:88/alunos.json", function() {
+	    	//$.getJSON( "http://rarolabs.com.br:88/alunos.json", function() {
+		$.getJSON( "params.json", function() {
+		//$.getJSON( "http://github.com/RifaChaAugusto/RifaCha/blob/main/params.json", function() { 
         	}).done(function(data) {
         	    for(var i=0; i <data.length; i++){
                      var nomeAluno = data[i]['nome'] 					 
